@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Nithi Thipprasoet] — Portfolio</title>
+<title>[ชื่อ-นามสกุล] — Portfolio</title>
 <meta name="description" content="[คำอธิบายสั้นๆ เกี่ยวกับคุณ]">
 <style>
   :root {
@@ -31,30 +31,29 @@
     overflow-x: hidden;
   }
 
-  /* ===== Starfield + Milky Way background ===== */
-  .stars, .stars2, .stars3, .milkyway {
+  /* ===== Starfield + Milky Way background (static — no filter/animation for performance) ===== */
+  .stars, .stars3, .milkyway {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -2;
     background: transparent;
+    pointer-events: none;
   }
 
   .milkyway {
     background: linear-gradient(
       100deg,
       transparent 0%,
-      rgba(255,255,255,0.02) 30%,
-      rgba(216,201,255,0.16) 42%,
-      rgba(255,255,255,0.22) 50%,
-      rgba(216,201,255,0.16) 58%,
-      rgba(255,255,255,0.02) 70%,
+      rgba(255,255,255,0.02) 28%,
+      rgba(216,201,255,0.10) 40%,
+      rgba(255,255,255,0.14) 50%,
+      rgba(216,201,255,0.10) 60%,
+      rgba(255,255,255,0.02) 72%,
       transparent 100%
     );
     transform: rotate(-22deg) scale(1.7);
-    filter: blur(6px);
-    mix-blend-mode: screen;
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   .stars {
@@ -68,24 +67,14 @@
       radial-gradient(1.3px 1.3px at 180px 260px, #ffffff, transparent),
       radial-gradient(1.8px 1.8px at 500px 220px, #ffffff, transparent),
       radial-gradient(1.3px 1.3px at 90px 120px, #ffe9c7, transparent),
-      radial-gradient(1.3px 1.3px at 380px 250px, #ffe9c7, transparent);
-    background-repeat: repeat;
-    background-size: 560px 320px;
-    opacity: 0.9;
-    animation: driftStars 140s linear infinite;
-  }
-
-  .stars2 {
-    background-image:
+      radial-gradient(1.3px 1.3px at 380px 250px, #ffe9c7, transparent),
       radial-gradient(1.2px 1.2px at 40px 60px, #cfe0ff, transparent),
       radial-gradient(1.2px 1.2px at 260px 20px, #cfe0ff, transparent),
-      radial-gradient(1.8px 1.8px at 340px 180px, #cfe0ff, transparent),
       radial-gradient(1.2px 1.2px at 460px 100px, #cfe0ff, transparent),
       radial-gradient(1.2px 1.2px at 150px 320px, #ffd9f0, transparent);
     background-repeat: repeat;
-    background-size: 480px 400px;
-    opacity: 0.65;
-    animation: driftStars 220s linear infinite reverse;
+    background-size: 560px 320px;
+    opacity: 0.85;
   }
 
   .stars3 {
@@ -93,11 +82,6 @@
       radial-gradient(ellipse 800px 500px at 15% -10%, rgba(159,199,255,0.28), transparent 60%),
       radial-gradient(ellipse 700px 500px at 90% 10%, rgba(217,168,255,0.24), transparent 60%),
       radial-gradient(ellipse 600px 400px at 50% 100%, rgba(255,201,168,0.12), transparent 60%);
-  }
-
-  @keyframes driftStars {
-    from { background-position: 0 0; }
-    to { background-position: -1000px 600px; }
   }
 
   .wrap {
@@ -109,8 +93,7 @@
   header.nav {
     position: sticky;
     top: 0;
-    background: rgba(26,20,69,0.72);
-    backdrop-filter: blur(10px);
+    background: rgba(22,17,58,0.92);
     border-bottom: 1px solid var(--border);
     z-index: 10;
   }
@@ -466,7 +449,6 @@
 
 <div class="milkyway"></div>
 <div class="stars"></div>
-<div class="stars2"></div>
 <div class="stars3"></div>
 
 <header class="nav">
@@ -491,12 +473,12 @@
       <!-- แทนที่ด้วยรูปจริง: <img src="photo.jpg" alt="[ชื่อ-นามสกุล]"> -->
       [รูปถ่าย]
     </div>
-    <div class="eyebrow">Portfolio · Nithi Thipprasoet</div>
+    <div class="eyebrow">Rocket in the Sky · Portfolio</div>
     <h1>[ชื่อ-นามสกุล]</h1>
     <p class="goal">[เป้าหมาย/สาขาที่ต้องการสมัคร เช่น "สมัครเข้าศึกษาต่อคณะ... สาขา..." หรือ "สมัครตำแหน่ง..."]</p>
     <div class="btn-row">
       <a href="#projects" class="btn primary">ดูผลงาน</a>
-      <a href="#contact" class="btn secondary">เกี่ยวกับผม</a>
+      <a href="#contact" class="btn secondary">ติดต่อผม</a>
     </div>
   </div>
 </section>
@@ -511,15 +493,15 @@
       <div class="info-block">
         <h3>ข้อมูลติดต่อ</h3>
         <ul>
-          <li><span class="label">อีเมล</span>[niti.thipprasoet@gmail.com]</li>
-          <li><span class="label">เบอร์โทร</span>[064-401-6472]</li>
+          <li><span class="label">อีเมล</span>[email@example.com]</li>
+          <li><span class="label">เบอร์โทร</span>[08x-xxx-xxxx]</li>
         </ul>
       </div>
 
       <div class="info-block">
         <h3>ประวัติการศึกษา</h3>
         <ul>
-          <li><span class="label">สถาบัน / คณะ / สาขา</span>[สถาบันเทศโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง]</li>
+          <li><span class="label">สถาบัน / คณะ / สาขา</span>[ชื่อโรงเรียน หรือมหาวิทยาลัย]</li>
           <li><span class="label">เกรดเฉลี่ย (GPAX)</span>[x.xx]</li>
         </ul>
       </div>
@@ -527,8 +509,8 @@
       <div class="info-block">
         <h3>ทักษะความสามารถพิเศษ</h3>
         <div class="skills-grid">
-          <span class="skill-tag">[Programming Front & Back End]</span>
-          <span class="skill-tag">[Edit Video]</span>
+          <span class="skill-tag">[Skill 1]</span>
+          <span class="skill-tag">[Skill 2]</span>
           <span class="skill-tag">[Skill 3]</span>
           <span class="skill-tag">[Skill 4]</span>
         </div>
@@ -626,15 +608,15 @@
   <div class="wrap">
     <h2 class="section-title">ติดต่อ</h2>
     <div class="contact-links">
-      <a href="mailto:[email@example.com]">[niti.thipprasoet@gmail.com]</a>
-      <a href="https://github.com/[username]" target="_blank">116Nithi</a>
-      <a href="https://linkedin.com/in/[username]" target="_blank">Instagram</a>
+      <a href="mailto:[email@example.com]">[email@example.com]</a>
+      <a href="https://github.com/[username]" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/[username]" target="_blank">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> [Nithi Thipprasoet]. All rights reserved.
+  © <span id="year"></span> [ชื่อ-นามสกุล]. All rights reserved.
 </footer>
 
 <script>
