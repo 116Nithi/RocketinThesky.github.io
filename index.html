@@ -7,13 +7,13 @@
 <meta name="description" content="พอร์ตโฟลิโอของนิธิ ทิพย์ประเสริฐ (Nithi Thipprasoet) — Fullstack Developer">
 <style>
   :root {
-    --bg: #1a1445;
-    --bg-elevated: #241c5c;
-    --text: #f8f6ff;
-    --muted: #b3aee0;
-    --border: rgba(255,255,255,0.14);
-    --accent: #9fc7ff;
-    --accent-2: #d9a8ff;
+    --bg: #ffffff;
+    --bg-elevated: #f7f8fa;
+    --text: #14151a;
+    --muted: #5b5f6b;
+    --border: #e3e5e9;
+    --accent: #2952e3;
+    --accent-2: #1b3aa8;
     --max-width: 860px;
   }
 
@@ -23,64 +23,10 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", Roboto, Helvetica, Arial, sans-serif;
-    background: linear-gradient(160deg, #341b6e 0%, #2a2478 30%, #1c3d84 62%, #142a63 100%);
+    background: var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  .stars, .stars3, .milkyway {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -2;
-    background: transparent;
-    pointer-events: none;
-  }
-
-  .milkyway {
-    background: linear-gradient(
-      100deg,
-      transparent 0%,
-      rgba(255,255,255,0.02) 28%,
-      rgba(216,201,255,0.10) 40%,
-      rgba(255,255,255,0.14) 50%,
-      rgba(216,201,255,0.10) 60%,
-      rgba(255,255,255,0.02) 72%,
-      transparent 100%
-    );
-    transform: rotate(-22deg) scale(1.7);
-    opacity: 0.7;
-  }
-
-  .stars {
-    background-image:
-      radial-gradient(1.8px 1.8px at 20px 30px, #ffffff, transparent),
-      radial-gradient(1.8px 1.8px at 120px 90px, #ffffff, transparent),
-      radial-gradient(1.3px 1.3px at 220px 40px, #ffffff, transparent),
-      radial-gradient(1.8px 1.8px at 320px 140px, #ffffff, transparent),
-      radial-gradient(1.3px 1.3px at 60px 200px, #ffffff, transparent),
-      radial-gradient(1.8px 1.8px at 400px 60px, #ffffff, transparent),
-      radial-gradient(1.3px 1.3px at 180px 260px, #ffffff, transparent),
-      radial-gradient(1.8px 1.8px at 500px 220px, #ffffff, transparent),
-      radial-gradient(1.3px 1.3px at 90px 120px, #ffe9c7, transparent),
-      radial-gradient(1.3px 1.3px at 380px 250px, #ffe9c7, transparent),
-      radial-gradient(1.2px 1.2px at 40px 60px, #cfe0ff, transparent),
-      radial-gradient(1.2px 1.2px at 260px 20px, #cfe0ff, transparent),
-      radial-gradient(1.2px 1.2px at 460px 100px, #cfe0ff, transparent),
-      radial-gradient(1.2px 1.2px at 150px 320px, #ffd9f0, transparent);
-    background-repeat: repeat;
-    background-size: 560px 320px;
-    opacity: 0.85;
-  }
-
-  .stars3 {
-    background:
-      radial-gradient(ellipse 800px 500px at 15% -10%, rgba(159,199,255,0.28), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 90% 10%, rgba(217,168,255,0.24), transparent 60%),
-      radial-gradient(ellipse 600px 400px at 50% 100%, rgba(255,201,168,0.12), transparent 60%);
   }
 
   .wrap {
@@ -92,7 +38,8 @@
   header.nav {
     position: sticky;
     top: 0;
-    background: rgba(22,17,58,0.92);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--border);
     z-index: 10;
   }
@@ -101,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 60px;
     overflow-x: auto;
   }
 
@@ -111,14 +58,15 @@
     text-decoration: none;
     color: var(--text);
     white-space: nowrap;
+    font-size: 15px;
   }
 
-  .nav .logo .rocket { display: inline-block; transform: rotate(45deg); margin-right: 6px; }
+  .nav .logo .rocket { display: inline-block; margin-right: 6px; font-size: 14px; }
 
   .nav ul {
     list-style: none;
     display: flex;
-    gap: 24px;
+    gap: 22px;
   }
 
   .nav a {
@@ -129,43 +77,31 @@
     transition: color .15s ease;
   }
 
-  .nav a:hover { color: var(--text); }
+  .nav a:hover { color: var(--accent); }
 
   section {
-    padding: 88px 0;
+    padding: 64px 0;
     border-bottom: 1px solid var(--border);
   }
 
   section:last-of-type { border-bottom: none; }
 
+  /* ===== 1. หน้าปก (Cover) ===== */
   .cover {
-    padding-top: 130px;
-    padding-bottom: 120px;
-    text-align: center;
-    position: relative;
-  }
-
-  .cover .rocket-icon {
-    font-size: 36px;
-    display: inline-block;
-    margin-bottom: 20px;
-    animation: floaty 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 14px rgba(124,155,255,0.55));
-  }
-
-  @keyframes floaty {
-    0%, 100% { transform: translateY(0) rotate(-8deg); }
-    50% { transform: translateY(-12px) rotate(-4deg); }
+    padding-top: 72px;
+    padding-bottom: 56px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
   }
 
   .cover .photo {
-    width: 160px;
-    height: 160px;
+    width: 132px;
+    height: 132px;
     border-radius: 50%;
     background: var(--bg-elevated);
     border: 1px solid var(--border);
-    box-shadow: 0 0 0 4px rgba(124,155,255,0.08), 0 0 40px rgba(124,155,255,0.15);
-    margin: 0 auto 28px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,53 +117,56 @@
   }
 
   .cover .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.14em;
+    font-size: 12px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--accent);
     font-weight: 600;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .cover h1 {
-    font-size: clamp(30px, 6vw, 46px);
+    font-size: clamp(26px, 4.5vw, 36px);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .cover .name-en {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 10px;
   }
 
   .cover .goal {
-    font-size: 17px;
-    color: var(--muted);
+    font-size: 16px;
+    color: var(--text);
     max-width: 520px;
-    margin: 0 auto 32px;
   }
+
+  .cover .goal .sub { color: var(--muted); font-size: 14px; }
 
   .btn-row {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 18px;
   }
 
   .btn {
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 9px 18px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: opacity .15s ease, transform .15s ease;
+    transition: opacity .15s ease;
   }
 
   .btn.primary {
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    color: #0a0e1f;
-    font-weight: 600;
-    border: none;
+    background: var(--accent);
+    color: #ffffff;
+    border: 1px solid var(--accent);
   }
 
   .btn.secondary {
@@ -236,43 +175,42 @@
     border: 1px solid var(--border);
   }
 
-  .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn:hover { opacity: 0.85; }
 
   h2.section-title {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   h2.section-title .num {
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--accent);
     font-weight: 700;
     margin-right: 6px;
   }
 
   .section-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     max-width: 560px;
   }
 
+  /* ===== 2. ประวัติส่วนตัว & การศึกษา ===== */
   .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
+    gap: 28px;
   }
 
   .info-block h3 {
-    font-size: 14px;
-    margin-bottom: 12px;
+    font-size: 13px;
+    margin-bottom: 10px;
     letter-spacing: -0.01em;
     color: var(--text);
+    font-weight: 600;
   }
 
   .info-block ul {
@@ -280,44 +218,44 @@
   }
 
   .info-block li {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text);
     margin-bottom: 8px;
   }
 
   .info-block li .label {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
     display: block;
   }
 
   .institute-card {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     margin-top: 6px;
-    padding: 12px 14px;
+    padding: 10px 12px;
     background: var(--bg-elevated);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   .institute-logo {
-    height: 42px;
-    width: 42px;
+    height: 36px;
+    width: 36px;
     flex-shrink: 0;
     object-fit: contain;
     background: #ffffff;
     border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+    padding: 4px;
+    border: 1px solid var(--border);
   }
 
   .institute-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    font-size: 14px;
+    gap: 3px;
+    font-size: 13px;
     line-height: 1.4;
     color: var(--text);
   }
@@ -331,99 +269,94 @@
   .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
+    gap: 8px;
+    margin-top: 6px;
   }
 
   .skill-tag {
-    padding: 8px 16px;
+    padding: 6px 13px;
     border: 1px solid var(--border);
     background: var(--bg-elevated);
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text);
   }
 
+  /* ===== 3. จุดมุ่งหมาย ===== */
   .purpose p {
     max-width: 640px;
     color: var(--text);
-    margin-bottom: 16px;
+    font-size: 15px;
+    margin-bottom: 14px;
   }
 
   .purpose p:last-child { margin-bottom: 0; }
 
+  /* ===== 4. ผลงาน ===== */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
+    gap: 20px;
   }
 
   .project-card {
     border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    border-radius: 12px;
+    background: var(--bg);
+    border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    transition: border-color .15s ease, box-shadow .15s ease;
   }
 
   .project-card:hover {
     border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(124,155,255,0.12);
+    box-shadow: 0 4px 16px rgba(41,82,227,0.08);
   }
 
   .project-card .thumb {
-    height: 140px;
-    background:
-      radial-gradient(ellipse 300px 140px at 30% 0%, rgba(124,155,255,0.25), transparent 60%),
-      radial-gradient(ellipse 300px 140px at 80% 100%, rgba(185,140,255,0.2), transparent 60%),
-      #0d1226;
+    height: 120px;
+    background: var(--bg-elevated);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--muted);
-    font-size: 13px;
     border-bottom: 1px solid var(--border);
   }
 
   .project-card .thumb img {
-    max-width: 62%;
-    max-height: 56%;
+    max-width: 60%;
+    max-height: 52%;
     object-fit: contain;
-    background: #ffffff;
-    padding: 14px 20px;
-    border-radius: 10px;
   }
 
-  .project-card .body { padding: 20px; }
+  .project-card .body { padding: 18px; }
 
   .project-card .tag {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+    font-weight: 600;
   }
 
   .project-card h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 6px;
     letter-spacing: -0.01em;
   }
 
   .project-card p {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
     margin-bottom: 4px;
   }
 
   .project-card .result {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text);
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 8px;
   }
 
@@ -434,37 +367,38 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    padding: 16px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border);
   }
 
   .activity-item:last-child { border-bottom: none; }
 
-  .activity-item .name { font-size: 15px; color: var(--text); }
+  .activity-item .name { font-size: 14px; color: var(--text); }
 
   .activity-item .desc {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
-    margin-top: 4px;
+    margin-top: 3px;
   }
 
   .activity-item .year {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--accent);
     white-space: nowrap;
+    font-weight: 600;
   }
 
   /* ===== Contact / Footer ===== */
   .contact-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
   }
 
   .contact-links a {
     color: var(--text);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 2px;
     transition: border-color .15s ease, color .15s ease;
@@ -473,24 +407,27 @@
   .contact-links a:hover { border-color: var(--accent); color: var(--accent); }
 
   footer {
-    padding: 40px 0;
+    padding: 32px 0;
     text-align: center;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  @media print {
+    header.nav { position: static; }
+    .btn-row { display: none; }
+    section { break-inside: avoid; }
   }
 
   @media (max-width: 600px) {
     .nav ul { gap: 14px; }
-    section { padding: 56px 0; }
+    section { padding: 44px 0; }
     .activity-item { flex-direction: column; }
+    .cover { flex-direction: column; align-items: flex-start; text-align: left; padding-top: 40px; }
   }
 </style>
 </head>
 <body>
-
-<div class="milkyway"></div>
-<div class="stars"></div>
-<div class="stars3"></div>
 
 <header class="nav">
   <div class="wrap">
@@ -506,23 +443,26 @@
   </div>
 </header>
 
+<!-- ===== 1. หน้าปก ===== -->
 <section class="cover" id="cover">
-  <div class="wrap">
-    <div class="rocket-icon">🚀</div>
+  <div class="wrap" style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;">
     <div class="photo">
       <img src="74F5A05D-1604-4142-90DA-8152BBC5689D.png" alt="นิธิ ทิพย์ประเสริฐ">
     </div>
-    <div class="eyebrow">Rocket in the Sky · Portfolio</div>
-    <h1>นิธิ ทิพย์ประเสริฐ</h1>
-    <p class="goal" style="margin-bottom:8px;">Nithi Thipprasoet</p>
-    <p class="goal">Fullstack Developer <span style="opacity:.7">(PHP / Vue.js / Node.js · LINE Platform Developer)</span></p>
-    <div class="btn-row">
-      <a href="#projects" class="btn primary">ดูผลงาน</a>
-      <a href="#contact" class="btn secondary">ติดต่อผม</a>
+    <div>
+      <div class="eyebrow">Portfolio</div>
+      <h1>นิธิ ทิพย์ประเสริฐ</h1>
+      <div class="name-en">Nithi Thipprasoet</div>
+      <p class="goal">Fullstack Developer <span class="sub">(PHP / Vue.js / Node.js · LINE Platform Developer)</span></p>
+      <div class="btn-row">
+        <a href="#projects" class="btn primary">ดูผลงาน</a>
+        <a href="#contact" class="btn secondary">ติดต่อผม</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ===== 2. ประวัติส่วนตัว & การศึกษา ===== -->
 <section class="profile" id="profile">
   <div class="wrap">
     <h2 class="section-title"><span class="num">02</span>ประวัติส่วนตัว & การศึกษา</h2>
@@ -540,8 +480,8 @@
       <div class="info-block">
         <h3>ประวัติการศึกษา</h3>
         <ul>
-          <li style="margin-bottom:14px;">
-            <span class="label" style="margin-bottom:8px;">สถาบัน / คณะ / สาขา</span>
+          <li style="margin-bottom:12px;">
+            <span class="label" style="margin-bottom:6px;">สถาบัน / คณะ / สาขา</span>
             <span class="institute-card">
               <img src="https://commons.wikimedia.org/wiki/Special:FilePath/KMITL_Sublogo.svg" alt="KMITL logo" class="institute-logo">
               <span class="institute-text">
@@ -568,6 +508,7 @@
   </div>
 </section>
 
+<!-- ===== 3. จุดมุ่งหมาย (Statement of Purpose) ===== -->
 <section class="purpose" id="purpose">
   <div class="wrap">
     <h2 class="section-title"><span class="num">03</span>จุดมุ่งหมาย (Statement of Purpose)</h2>
@@ -577,6 +518,7 @@
   </div>
 </section>
 
+<!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
 <section class="projects" id="projects">
   <div class="wrap">
     <h2 class="section-title"><span class="num">04</span>ผลงาน (Portfolio/Projects)</h2>
@@ -618,6 +560,7 @@
   </div>
 </section>
 
+<!-- ===== 5. กิจกรรม & รางวัล / ใบประกาศนียบัตร ===== -->
 <section class="activities" id="activities">
   <div class="wrap">
     <h2 class="section-title"><span class="num">05</span>กิจกรรม & รางวัล / ใบประกาศนียบัตร</h2>
@@ -649,6 +592,7 @@
   </div>
 </section>
 
+<!-- ===== ติดต่อ ===== -->
 <section class="contact" id="contact">
   <div class="wrap">
     <h2 class="section-title">ติดต่อ</h2>
