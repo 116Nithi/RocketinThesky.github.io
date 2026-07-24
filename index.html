@@ -324,6 +324,99 @@
 
   .purpose p:last-child { margin-bottom: 0; }
 
+  /* ===== รู้จักฉันมากขึ้น (Personal) ===== */
+  .personal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .personal-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .personal-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .personal-icon.c1 { background: #fde8d7; }
+  .personal-icon.c2 { background: #dbe8ff; }
+  .personal-icon.c3 { background: #e6dcfb; }
+  .personal-icon.c4 { background: #d9f2e3; }
+
+  .personal-text h4 {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .personal-text p {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .cd-player {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+
+  .cd-disc {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: conic-gradient(from 90deg, #cfd3da, #ffffff, #b9c6f5, #ffffff, #cfd3da);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cd-disc.spinning { animation: cdspin 2.4s linear infinite; }
+
+  @keyframes cdspin { to { transform: rotate(360deg); } }
+
+  .cd-disc .cd-hole {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--bg-elevated);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .cd-info { flex: 1; min-width: 160px; }
+
+  .cd-info .cd-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+  .cd-info .cd-sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+
+  .cd-embed { margin-top: 14px; }
+
+  .cd-embed iframe { border-radius: 8px; max-width: 100%; }
+
   /* ===== 4. ผลงาน ===== */
   .projects-grid {
     display: grid;
@@ -493,6 +586,7 @@
       <li><a href="#cover">หน้าปก</a></li>
       <li><a href="#profile">ประวัติส่วนตัว</a></li>
       <li><a href="#purpose">จุดมุ่งหมาย</a></li>
+      <li><a href="#personal">รู้จักฉัน</a></li>
       <li><a href="#projects">ผลงาน</a></li>
       <li><a href="#activities">กิจกรรม & รางวัล</a></li>
       <li><a href="#contact">ติดต่อ</a></li>
@@ -578,6 +672,57 @@
     <p class="section-desc">สรุปสั้นๆ ว่าทำไมถึงเลือกสมัครและจะสร้างประโยชน์อะไรได้บ้าง (ไม่เกิน 1 หน้า)</p>
     <p>[เขียนเหตุผลที่เลือกสมัครงาน/คณะนี้ แรงบันดาลใจ หรือจุดเริ่มต้นความสนใจ]</p>
     <p>[เขียนว่าคุณจะนำความรู้ ทักษะ หรือประสบการณ์ที่มีไปสร้างประโยชน์อะไรได้บ้าง]</p>
+  </div>
+</section>
+
+<!-- ===== รู้จักฉันมากขึ้น ===== -->
+<section class="personal" id="personal">
+  <div class="wrap">
+    <h2 class="section-title">นอกเหนือจากเรซูเม่</h2>
+    <p class="section-desc">งานอดิเรกและสิ่งที่ชอบยามว่าง</p>
+
+    <div class="personal-grid">
+      <div class="personal-card">
+        <div class="personal-icon c1">🎮</div>
+        <div class="personal-text">
+          <h4>เล่นเกม</h4>
+          <p>ผ่อนคลายและฝึกแก้ปัญหาเฉพาะหน้า</p>
+        </div>
+      </div>
+      <div class="personal-card">
+        <div class="personal-icon c2">🎬</div>
+        <div class="personal-text">
+          <h4>ดูหนัง/ซีรีส์</h4>
+          <p>ชอบติดตามเนื้อเรื่องและงานภาพ</p>
+        </div>
+      </div>
+      <div class="personal-card">
+        <div class="personal-icon c3">🎵</div>
+        <div class="personal-text">
+          <h4>ฟังเพลง</h4>
+          <p>สาย Hip-hop / R&amp;B</p>
+        </div>
+      </div>
+      <div class="personal-card">
+        <div class="personal-icon c4">🚗</div>
+        <div class="personal-text">
+          <h4>รถ</h4>
+          <p>สนใจเรื่องรถและเครื่องยนต์</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cd-player">
+      <div class="cd-disc" id="cdDisc">
+        <div class="cd-hole">💿</div>
+      </div>
+      <div class="cd-info">
+        <div class="cd-title">Radiohead — Creep</div>
+        <div class="cd-sub">เพลงที่ชอบฟัง กดใส่แผ่นแล้วฟังได้เลย</div>
+        <button class="btn primary" id="cdPlayBtn" type="button">▶ ใส่แผ่น & ฟังเลย</button>
+        <div class="cd-embed" id="cdEmbed"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -678,6 +823,17 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  var cdBtn = document.getElementById('cdPlayBtn');
+  if (cdBtn) {
+    cdBtn.addEventListener('click', function () {
+      document.getElementById('cdDisc').classList.add('spinning');
+      document.getElementById('cdEmbed').innerHTML =
+        '<iframe width="280" height="158" src="https://www.youtube.com/embed/XFkzRNyygfk?autoplay=1" title="Radiohead - Creep" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      cdBtn.textContent = '🎵 กำลังเล่น...';
+      cdBtn.disabled = true;
+    });
+  }
 </script>
 
 </body>
