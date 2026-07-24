@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nithi Thipprasoet — Portfolio</title>
 <meta name="description" content="พอร์ตโฟลิโอของนิธิ ทิพย์ประเสริฐ (Nithi Thipprasoet) — Fullstack Developer">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
 <style>
   :root {
     --bg: #ffffff;
@@ -42,6 +43,13 @@
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--border);
     z-index: 10;
+  }
+
+  header.nav::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
   }
 
   .nav .wrap {
@@ -118,24 +126,24 @@
 
   .cover .eyebrow {
     font-size: 12px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 10px;
   }
 
   .cover h1 {
-    font-size: clamp(26px, 4.5vw, 36px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
     margin-bottom: 6px;
   }
 
   .cover .name-en {
     font-size: 15px;
     color: var(--muted);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .cover .goal {
@@ -177,18 +185,37 @@
 
   .btn:hover { opacity: 0.85; }
 
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
   h2.section-title {
     font-size: 12px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 6px;
+    font-weight: 700;
   }
 
   h2.section-title .num {
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 800;
     margin-right: 6px;
+  }
+
+  .badge-todo {
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: #fff4e5;
+    color: #a15c00;
+    border: 1px solid #f5dcb0;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
   .section-desc {
@@ -282,6 +309,11 @@
     color: var(--text);
   }
 
+  .skill-tag.todo {
+    color: var(--muted);
+    border-style: dashed;
+  }
+
   /* ===== 3. จุดมุ่งหมาย ===== */
   .purpose p {
     max-width: 640px;
@@ -307,12 +339,13 @@
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: border-color .15s ease, box-shadow .15s ease;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   }
 
   .project-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 4px 16px rgba(41,82,227,0.08);
+    box-shadow: 0 8px 22px rgba(41,82,227,0.12);
+    transform: translateY(-2px);
   }
 
   .project-card .thumb {
@@ -338,7 +371,7 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 6px;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .project-card h3 {
@@ -354,10 +387,33 @@
   }
 
   .project-card .result {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
     font-size: 12px;
-    color: var(--text);
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .project-card .result .stat {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  .project-card .cta {
+    font-size: 12px;
     font-weight: 600;
-    margin-top: 8px;
+    color: var(--accent);
+    margin-top: 12px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity .15s ease, transform .15s ease;
+  }
+
+  .project-card:hover .cta {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   /* ===== 5. กิจกรรม & รางวัล ===== */
@@ -385,7 +441,7 @@
     font-size: 12px;
     color: var(--accent);
     white-space: nowrap;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   /* ===== Contact / Footer ===== */
@@ -415,6 +471,7 @@
 
   @media print {
     header.nav { position: static; }
+    header.nav::after { display: none; }
     .btn-row { display: none; }
     section { break-inside: avoid; }
   }
@@ -465,7 +522,10 @@
 <!-- ===== 2. ประวัติส่วนตัว & การศึกษา ===== -->
 <section class="profile" id="profile">
   <div class="wrap">
-    <h2 class="section-title"><span class="num">02</span>ประวัติส่วนตัว & การศึกษา</h2>
+    <div class="section-head">
+      <h2 class="section-title"><span class="num">02</span>ประวัติส่วนตัว & การศึกษา</h2>
+      <span class="badge-todo">GPAX รอกรอก</span>
+    </div>
     <p class="section-desc">ข้อมูลติดต่อ ประวัติการศึกษา และทักษะความสามารถพิเศษ</p>
 
     <div class="info-grid">
@@ -499,9 +559,9 @@
         <h3>ทักษะความสามารถพิเศษ</h3>
         <div class="skills-grid">
           <span class="skill-tag">การปรับตัวเข้ากับผู้คนได้ดี</span>
-          <span class="skill-tag">[Skill 2]</span>
-          <span class="skill-tag">[Skill 3]</span>
-          <span class="skill-tag">[Skill 4]</span>
+          <span class="skill-tag todo">[Skill 2]</span>
+          <span class="skill-tag todo">[Skill 3]</span>
+          <span class="skill-tag todo">[Skill 4]</span>
         </div>
       </div>
     </div>
@@ -511,7 +571,10 @@
 <!-- ===== 3. จุดมุ่งหมาย (Statement of Purpose) ===== -->
 <section class="purpose" id="purpose">
   <div class="wrap">
-    <h2 class="section-title"><span class="num">03</span>จุดมุ่งหมาย (Statement of Purpose)</h2>
+    <div class="section-head">
+      <h2 class="section-title"><span class="num">03</span>จุดมุ่งหมาย (Statement of Purpose)</h2>
+      <span class="badge-todo">รอกรอกข้อมูล</span>
+    </div>
     <p class="section-desc">สรุปสั้นๆ ว่าทำไมถึงเลือกสมัครและจะสร้างประโยชน์อะไรได้บ้าง (ไม่เกิน 1 หน้า)</p>
     <p>[เขียนเหตุผลที่เลือกสมัครงาน/คณะนี้ แรงบันดาลใจ หรือจุดเริ่มต้นความสนใจ]</p>
     <p>[เขียนว่าคุณจะนำความรู้ ทักษะ หรือประสบการณ์ที่มีไปสร้างประโยชน์อะไรได้บ้าง]</p>
@@ -532,7 +595,8 @@
           <div class="tag">Web App / LINE Bot / Admin System</div>
           <h3>Komatsu Greeting Message System</h3>
           <p>พัฒนาระบบข้อความต้อนรับอัตโนมัติ (Greeting Message) สำหรับ LINE Official Account ของบริษัท แบบ custom ที่นอกเหนือจากฟีเจอร์มาตรฐานของ LINE พร้อมทั้งระบบหลังบ้านสำหรับจัดการแชท LINE OA, ข้อมูลลูกค้า และ export ประวัติแชทเป็น Word / Excel / PDF</p>
-          <div class="result">ผลลัพธ์: พัฒนาและส่งมอบระบบสำเร็จ 100%</div>
+          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
+          <div class="cta">ดูซอร์สโค้ด →</div>
         </div>
       </a>
 
@@ -542,7 +606,8 @@
           <div class="tag">Web App / LINE OA / Admin Dashboard</div>
           <h3>Daikin Promo — Chat Admin</h3>
           <p>พัฒนาระบบแชทสำหรับแอดมิน (Chat Admin) บน LINE OA รองรับแคมเปญโปรโมชั่นของ Daikin พร้อม export ประวัติแชทเป็น Word / Excel / PDF</p>
-          <div class="result">ผลลัพธ์: พัฒนาและส่งมอบระบบสำเร็จ 100%</div>
+          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
+          <div class="cta">ดูซอร์สโค้ด →</div>
         </div>
       </a>
 
@@ -563,7 +628,10 @@
 <!-- ===== 5. กิจกรรม & รางวัล / ใบประกาศนียบัตร ===== -->
 <section class="activities" id="activities">
   <div class="wrap">
-    <h2 class="section-title"><span class="num">05</span>กิจกรรม & รางวัล / ใบประกาศนียบัตร</h2>
+    <div class="section-head">
+      <h2 class="section-title"><span class="num">05</span>กิจกรรม & รางวัล / ใบประกาศนียบัตร</h2>
+      <span class="badge-todo">รอกรอกข้อมูล</span>
+    </div>
     <p class="section-desc">กิจกรรมจิตอาสา ค่าย อบรม รางวัล และเกียรติบัตรที่เคยได้รับ</p>
 
     <ul class="activity-list">
