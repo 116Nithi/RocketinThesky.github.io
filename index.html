@@ -389,6 +389,15 @@
     border-bottom: 1px solid var(--border);
   }
 
+  .project-card .thumb img {
+    max-width: 62%;
+    max-height: 56%;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 14px 20px;
+    border-radius: 10px;
+  }
+
   .project-card .body { padding: 20px; }
 
   .project-card .tag {
@@ -418,6 +427,7 @@
     margin-top: 8px;
   }
 
+  /* ===== 5. กิจกรรม & รางวัล ===== */
   .activity-list { list-style: none; }
 
   .activity-item {
@@ -444,6 +454,7 @@
     white-space: nowrap;
   }
 
+  /* ===== Contact / Footer ===== */
   .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -573,7 +584,7 @@
     <div class="projects-grid">
 
       <a href="https://github.com/116Nithi/Komatsu-101" target="_blank" class="project-card">
-        <div class="thumb">Komatsu · LINE OA</div>
+        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Komatsu_company_logos.svg" alt="Komatsu logo"></div>
         <div class="body">
           <div class="tag">Web App / LINE Bot / Admin System</div>
           <h3>Komatsu Greeting Message System</h3>
@@ -583,7 +594,7 @@
       </a>
 
       <a href="https://github.com/116Nithi/Daikinpromo-101" target="_blank" class="project-card">
-        <div class="thumb">Daikin Promo</div>
+        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/DAIKIN_logo.svg" alt="Daikin logo"></div>
         <div class="body">
           <div class="tag">Web App / LINE OA / Admin Dashboard</div>
           <h3>Daikin Promo — Chat Admin</h3>
