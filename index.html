@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[ชื่อ-นามสกุล] — Portfolio</title>
-<meta name="description" content="[คำอธิบายสั้นๆ เกี่ยวกับคุณ]">
+<title>Nithi Thipprasoet — Portfolio</title>
+<meta name="description" content="พอร์ตโฟลิโอของนิธิ ทิพย์ประเสริฐ (Nithi Thipprasoet) — Fullstack Developer">
 <style>
   :root {
     --bg: #1a1445;
@@ -31,7 +31,6 @@
     overflow-x: hidden;
   }
 
-  /* ===== Starfield + Milky Way background (static — no filter/animation for performance) ===== */
   .stars, .stars3, .milkyway {
     position: fixed;
     top: 0; left: 0;
@@ -139,7 +138,6 @@
 
   section:last-of-type { border-bottom: none; }
 
-  /* ===== 1. หน้าปก (Cover) ===== */
   .cover {
     padding-top: 130px;
     padding-bottom: 120px;
@@ -264,7 +262,6 @@
     max-width: 560px;
   }
 
-  /* ===== 2. ประวัติส่วนตัว & การศึกษา ===== */
   .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -310,7 +307,6 @@
     color: var(--text);
   }
 
-  /* ===== 3. จุดมุ่งหมาย ===== */
   .purpose p {
     max-width: 640px;
     color: var(--text);
@@ -319,7 +315,6 @@
 
   .purpose p:last-child { margin-bottom: 0; }
 
-  /* ===== 4. ผลงาน ===== */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -386,7 +381,6 @@
     margin-top: 8px;
   }
 
-  /* ===== 5. กิจกรรม & รางวัล ===== */
   .activity-list { list-style: none; }
 
   .activity-item {
@@ -413,7 +407,6 @@
     white-space: nowrap;
   }
 
-  /* ===== Contact / Footer ===== */
   .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -453,7 +446,7 @@
 
 <header class="nav">
   <div class="wrap">
-    <a href="#cover" class="logo"><span class="rocket">🚀</span>[ชื่อ-นามสกุล]</a>
+    <a href="#cover" class="logo"><span class="rocket">🚀</span>นิธิ ทิพย์ประเสริฐ</a>
     <ul>
       <li><a href="#cover">หน้าปก</a></li>
       <li><a href="#profile">ประวัติส่วนตัว</a></li>
@@ -465,17 +458,16 @@
   </div>
 </header>
 
-<!-- ===== 1. หน้าปก ===== -->
 <section class="cover" id="cover">
   <div class="wrap">
     <div class="rocket-icon">🚀</div>
     <div class="photo">
-      <!-- แทนที่ด้วยรูปจริง: <img src="photo.jpg" alt="[ชื่อ-นามสกุล]"> -->
       [รูปถ่าย]
     </div>
     <div class="eyebrow">Rocket in the Sky · Portfolio</div>
-    <h1>[ชื่อ-นามสกุล]</h1>
-    <p class="goal">[เป้าหมาย/สาขาที่ต้องการสมัคร เช่น "สมัครเข้าศึกษาต่อคณะ... สาขา..." หรือ "สมัครตำแหน่ง..."]</p>
+    <h1>นิธิ ทิพย์ประเสริฐ</h1>
+    <p class="goal" style="margin-bottom:8px;">Nithi Thipprasoet</p>
+    <p class="goal">Fullstack Developer (Frontend & Backend) — <span style="opacity:.7">อยู่ระหว่างตัดสินใจสายที่ถนัดที่สุดจากผลงานที่ผ่านมา</span></p>
     <div class="btn-row">
       <a href="#projects" class="btn primary">ดูผลงาน</a>
       <a href="#contact" class="btn secondary">ติดต่อผม</a>
@@ -483,7 +475,6 @@
   </div>
 </section>
 
-<!-- ===== 2. ประวัติส่วนตัว & การศึกษา ===== -->
 <section class="profile" id="profile">
   <div class="wrap">
     <h2 class="section-title"><span class="num">02</span>ประวัติส่วนตัว & การศึกษา</h2>
@@ -493,15 +484,21 @@
       <div class="info-block">
         <h3>ข้อมูลติดต่อ</h3>
         <ul>
-          <li><span class="label">อีเมล</span>[email@example.com]</li>
-          <li><span class="label">เบอร์โทร</span>[08x-xxx-xxxx]</li>
+          <li><span class="label">อีเมล</span>niti.thipprasoet@gmail.com</li>
+          <li><span class="label">เบอร์โทร</span>064-401-6472</li>
         </ul>
       </div>
 
       <div class="info-block">
         <h3>ประวัติการศึกษา</h3>
         <ul>
-          <li><span class="label">สถาบัน / คณะ / สาขา</span>[ชื่อโรงเรียน หรือมหาวิทยาลัย]</li>
+          <li>
+            <span class="label">สถาบัน / คณะ / สาขา</span>
+            <span style="display:flex; align-items:center; gap:8px; margin-top:4px;">
+              <img src="https://www.kmitl.ac.th/sites/default/files/2025-03/Sitename.png" alt="KMITL logo" style="height:28px; width:auto; background:#fff; border-radius:4px; padding:2px 4px;">
+              สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.)
+            </span>
+          </li>
           <li><span class="label">เกรดเฉลี่ย (GPAX)</span>[x.xx]</li>
         </ul>
       </div>
@@ -509,7 +506,7 @@
       <div class="info-block">
         <h3>ทักษะความสามารถพิเศษ</h3>
         <div class="skills-grid">
-          <span class="skill-tag">[Skill 1]</span>
+          <span class="skill-tag">การปรับตัวเข้ากับผู้คนได้ดี</span>
           <span class="skill-tag">[Skill 2]</span>
           <span class="skill-tag">[Skill 3]</span>
           <span class="skill-tag">[Skill 4]</span>
@@ -519,7 +516,6 @@
   </div>
 </section>
 
-<!-- ===== 3. จุดมุ่งหมาย (Statement of Purpose) ===== -->
 <section class="purpose" id="purpose">
   <div class="wrap">
     <h2 class="section-title"><span class="num">03</span>จุดมุ่งหมาย (Statement of Purpose)</h2>
@@ -529,7 +525,6 @@
   </div>
 </section>
 
-<!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
 <section class="projects" id="projects">
   <div class="wrap">
     <h2 class="section-title"><span class="num">04</span>ผลงาน (Portfolio/Projects)</h2>
@@ -537,23 +532,23 @@
 
     <div class="projects-grid">
 
-      <a href="#" class="project-card">
-        <div class="thumb">[รูปผลงานที่ 1]</div>
+      <a href="https://github.com/116Nithi" target="_blank" class="project-card">
+        <div class="thumb">Komatsu · LINE OA</div>
         <div class="body">
-          <div class="tag">[หมวดหมู่]</div>
-          <h3>[ชื่อผลงานที่ 1]</h3>
-          <p>[บทบาท/หน้าที่ที่รับผิดชอบ]</p>
-          <div class="result">ผลลัพธ์: [ผลลัพธ์ที่ทำได้]</div>
+          <div class="tag">Web App / LINE Bot</div>
+          <h3>Komatsu Greeting Message System</h3>
+          <p>พัฒนาระบบข้อความต้อนรับอัตโนมัติ (Greeting Message) สำหรับ LINE Official Account ของบริษัท แบบ custom ที่นอกเหนือจากฟีเจอร์มาตรฐานของ LINE</p>
+          <div class="result">ผลลัพธ์: [รอเพิ่มรายละเอียดผลลัพธ์]</div>
         </div>
       </a>
 
-      <a href="#" class="project-card">
-        <div class="thumb">[รูปผลงานที่ 2]</div>
+      <a href="https://github.com/116Nithi" target="_blank" class="project-card">
+        <div class="thumb">Daikin Promo</div>
         <div class="body">
-          <div class="tag">[หมวดหมู่]</div>
-          <h3>[ชื่อผลงานที่ 2]</h3>
-          <p>[บทบาท/หน้าที่ที่รับผิดชอบ]</p>
-          <div class="result">ผลลัพธ์: [ผลลัพธ์ที่ทำได้]</div>
+          <div class="tag">Web App / Admin Dashboard</div>
+          <h3>Daikin Promo — Chat Admin</h3>
+          <p>พัฒนาระบบแชทสำหรับแอดมิน (Chat Admin) รองรับแคมเปญโปรโมชั่นของ Daikin</p>
+          <div class="result">ผลลัพธ์: [รอเพิ่มรายละเอียดผลลัพธ์]</div>
         </div>
       </a>
 
@@ -571,7 +566,6 @@
   </div>
 </section>
 
-<!-- ===== 5. กิจกรรม & รางวัล / ใบประกาศนียบัตร ===== -->
 <section class="activities" id="activities">
   <div class="wrap">
     <h2 class="section-title"><span class="num">05</span>กิจกรรม & รางวัล / ใบประกาศนียบัตร</h2>
@@ -603,20 +597,19 @@
   </div>
 </section>
 
-<!-- ===== ติดต่อ ===== -->
 <section class="contact" id="contact">
   <div class="wrap">
     <h2 class="section-title">ติดต่อ</h2>
     <div class="contact-links">
-      <a href="mailto:[email@example.com]">[email@example.com]</a>
-      <a href="https://github.com/[username]" target="_blank">GitHub</a>
+      <a href="mailto:niti.thipprasoet@gmail.com">niti.thipprasoet@gmail.com</a>
+      <a href="https://github.com/116Nithi" target="_blank">GitHub · 116Nithi</a>
       <a href="https://linkedin.com/in/[username]" target="_blank">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> [ชื่อ-นามสกุล]. All rights reserved.
+  © <span id="year"></span> นิธิ ทิพย์ประเสริฐ. All rights reserved.
 </footer>
 
 <script>
