@@ -417,6 +417,154 @@
 
   .cd-embed iframe { border-radius: 8px; max-width: 100%; }
 
+  /* ===== แนะนำตัว (About) ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .about-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-meta {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .about-meta .item { flex: 1; }
+  .about-meta .item .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 2px; }
+
+  @media (max-width: 700px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== ทักษะทางเทคนิค (Technical Skills) ===== */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+  }
+
+  .tech-block h3 {
+    font-size: 15px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .software-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .software-tag {
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .coding-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin-top: 10px;
+  }
+
+  .coding-list span {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .tech-pill {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  @media (max-width: 700px) {
+    .tech-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ===== ประสบการณ์ (Experience) ===== */
+  .exp-list { list-style: none; }
+
+  .exp-item {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-year {
+    flex-shrink: 0;
+    width: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+
+  .exp-body h4 { font-size: 15px; margin-bottom: 4px; }
+  .exp-body .exp-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+  .exp-body p.exp-desc { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  .exp-body .exp-loc { font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 600px) {
+    .exp-item { flex-direction: column; gap: 4px; }
+    .exp-year { width: auto; }
+  }
+
   /* ===== 4. ผลงาน ===== */
   .projects-grid {
     display: grid;
@@ -584,9 +732,12 @@
     <a href="#cover" class="logo"><span class="rocket">🚀</span>นิธิ ทิพย์ประเสริฐ</a>
     <ul>
       <li><a href="#cover">หน้าปก</a></li>
+      <li><a href="#about">แนะนำตัว</a></li>
       <li><a href="#profile">ประวัติส่วนตัว</a></li>
       <li><a href="#purpose">จุดมุ่งหมาย</a></li>
       <li><a href="#personal">รู้จักฉัน</a></li>
+      <li><a href="#tech-skills">ทักษะ</a></li>
+      <li><a href="#experience">ประสบการณ์</a></li>
       <li><a href="#projects">ผลงาน</a></li>
       <li><a href="#activities">กิจกรรม & รางวัล</a></li>
       <li><a href="#contact">ติดต่อ</a></li>
@@ -608,6 +759,37 @@
       <div class="btn-row">
         <a href="#projects" class="btn primary">ดูผลงาน</a>
         <a href="#contact" class="btn secondary">ติดต่อผม</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== แนะนำตัว (About) ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <h2 class="section-title">แนะนำตัว</h2>
+    <p class="section-desc">สวัสดีครับ นี่คือตัวตนของผม</p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>สวัสดีครับ ผมนิธิ ทิพย์ประเสริฐ นักศึกษาคณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี สาขาเทคโนโลยีคอมพิวเตอร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.) เกิดและเติบโตที่อำเภอสมอแข จังหวัดพิษณุโลก</p>
+        <p>ผมสนใจงานด้าน Fullstack Development เป็นพิเศษ ทั้งฝั่ง Frontend และ Backend รวมถึงการเชื่อมต่อ LINE Platform เพื่อสร้างระบบที่ใช้งานได้จริง มีประสบการณ์ตรงจากการฝึกงานเป็น Intern Programmer ที่บริษัท SMMMS ซึ่งได้พัฒนาระบบให้กับ Komatsu และ Daikin Promo</p>
+        <p>นอกเวลาเรียน ผมชอบเล่นเกม ดูหนัง/ซีรีส์ ฟังเพลงแนว Hip-hop/R&amp;B และสนใจเรื่องรถ</p>
+      </div>
+      <div class="about-side">
+        <div class="about-photo">
+          <img src="74F5A05D-1604-4142-90DA-8152BBC5689D.png" alt="นิธิ ทิพย์ประเสริฐ">
+        </div>
+        <div class="about-meta">
+          <div class="item">
+            <span class="k">📍 ที่อยู่</span>
+            อ.สมอแข จ.พิษณุโลก
+          </div>
+          <div class="item">
+            <span class="k">🎂 วันเกิด</span>
+            20 ก.ย. 2005
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -723,6 +905,67 @@
         <div class="cd-embed" id="cdEmbed"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== ทักษะทางเทคนิค (Technical Skills) ===== -->
+<section class="tech-skills" id="tech-skills">
+  <div class="wrap">
+    <h2 class="section-title">ทักษะทางเทคนิค</h2>
+    <p class="section-desc">เครื่องมือและภาษาที่ใช้งานจริงในการพัฒนา</p>
+
+    <div class="tech-grid">
+      <div class="tech-block">
+        <h3>Software Skills</h3>
+        <div class="software-tags">
+          <div class="software-tag">VS</div>
+          <div class="software-tag">Git</div>
+          <div class="software-tag">Fig</div>
+          <div class="software-tag">Post</div>
+        </div>
+      </div>
+
+      <div class="tech-block">
+        <h3>Coding Skills</h3>
+        <p class="section-desc" style="margin-bottom:6px;">Proficient in:</p>
+        <div class="coding-list">
+          <span>PHP (CodeIgniter 3, HMVC)</span>
+          <span>MySQL</span>
+          <span>JavaScript</span>
+          <span>Vue.js</span>
+          <span>Node.js / Express</span>
+          <span>LINE Messaging API</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-pills">
+      <span class="tech-pill">Web Development</span>
+      <span class="tech-pill">Fullstack</span>
+      <span class="tech-pill">LINE Platform</span>
+      <span class="tech-pill">Admin System</span>
+      <span class="tech-pill">REST API</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ประสบการณ์ (Experience) ===== -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <h2 class="section-title">ประสบการณ์</h2>
+    <p class="section-desc">ประสบการณ์ทำงานและฝึกงานที่ผ่านมา</p>
+
+    <ul class="exp-list">
+      <li class="exp-item">
+        <div class="exp-year">2025 - Present</div>
+        <div class="exp-body">
+          <h4>SMMMS</h4>
+          <div class="exp-role">Intern Programmer</div>
+          <p class="exp-desc">พัฒนาระบบ LINE OA ให้กับลูกค้า Komatsu (ระบบ Greeting Message และหลังบ้านจัดการแชท) และ Daikin Promo (ระบบ Chat Admin) รวมถึงฟีเจอร์ export ประวัติแชทเป็น Word / Excel / PDF</p>
+          <div class="exp-loc">Thailand</div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
