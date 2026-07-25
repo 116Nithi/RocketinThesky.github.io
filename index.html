@@ -113,9 +113,73 @@
   .cover {
     padding-top: 72px;
     padding-bottom: 56px;
+  }
+
+  .cover-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .cover-main {
     display: flex;
     align-items: center;
     gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .cover-keywords {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .cover-keywords .kw {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 2.6vw, 26px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .cover-keywords .kw:nth-child(1) { color: var(--text); }
+  .cover-keywords .kw:nth-child(3) { color: var(--accent); }
+
+  @media (max-width: 800px) {
+    .cover-keywords { display: none; }
+  }
+
+  .marquee {
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+    padding: 14px 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 36px;
+    white-space: nowrap;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-track span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 
   .cover .photo {
@@ -578,16 +642,31 @@
   }
 
   /* ===== ประสบการณ์ (Experience) ===== */
-  .exp-list { list-style: none; }
+  .exp-list {
+    list-style: none;
+    border-left: 2px solid var(--border);
+    margin-left: 6px;
+    padding-left: 28px;
+  }
 
   .exp-item {
+    position: relative;
     display: flex;
     gap: 16px;
     padding: 18px 0;
-    border-bottom: 1px solid var(--border);
   }
 
-  .exp-item:last-child { border-bottom: none; }
+  .exp-item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 25px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--bg);
+  }
 
   .exp-year {
     flex-shrink: 0;
@@ -764,7 +843,8 @@
     .nav ul { gap: 14px; }
     section { padding: 44px 0; }
     .activity-item { flex-direction: column; }
-    .cover { flex-direction: column; align-items: flex-start; text-align: left; padding-top: 40px; }
+    .cover-main { flex-direction: column; align-items: flex-start; text-align: left; }
+    .cover { padding-top: 40px; }
   }
 </style>
 </head>
@@ -791,18 +871,26 @@
 
 <!-- ===== 1. หน้าปก ===== -->
 <section class="cover" id="cover">
-  <div class="wrap" style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;">
-    <div class="photo">
-      <img src="74F5A05D-1604-4142-90DA-8152BBC5689D.png" alt="นิธิ ทิพย์ประเสริฐ">
-    </div>
-    <div>
-      <div class="eyebrow">นิธิ ทิพย์ประเสริฐ · Nithi Thipprasoet</div>
-      <h1>Portfolio</h1>
-      <p class="goal">Fullstack Developer <span class="sub">(PHP / Vue.js / Node.js · LINE Platform Developer)</span></p>
-      <div class="btn-row">
-        <a href="#projects" class="btn primary">ดูผลงาน</a>
-        <a href="#contact" class="btn secondary">ติดต่อผม</a>
+  <div class="wrap cover-wrap">
+    <div class="cover-main">
+      <div class="photo">
+        <img src="74F5A05D-1604-4142-90DA-8152BBC5689D.png" alt="นิธิ ทิพย์ประเสริฐ">
       </div>
+      <div>
+        <div class="eyebrow">นิธิ ทิพย์ประเสริฐ · Nithi Thipprasoet</div>
+        <h1>Portfolio</h1>
+        <p class="goal">Fullstack Developer <span class="sub">(PHP / Vue.js / Node.js · LINE Platform Developer)</span></p>
+        <div class="btn-row">
+          <a href="#projects" class="btn primary">ดูผลงาน</a>
+          <a href="#contact" class="btn secondary">ติดต่อผม</a>
+        </div>
+      </div>
+    </div>
+    <div class="cover-keywords">
+      <div class="kw">Frontend</div>
+      <div class="kw">Backend</div>
+      <div class="kw">LINE Platform</div>
+      <div class="kw">Figma / UI-UX</div>
     </div>
   </div>
 </section>
@@ -1015,6 +1103,12 @@
     </ul>
   </div>
 </section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span>
+  </div>
+</div>
 
 <!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
 <section class="projects" id="projects">
