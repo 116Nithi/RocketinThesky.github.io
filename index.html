@@ -6,15 +6,19 @@
 <title>Nithi Thipprasoet — Portfolio</title>
 <meta name="description" content="พอร์ตโฟลิโอของนิธิ ทิพย์ประเสริฐ (Nithi Thipprasoet) — Fullstack Developer">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --bg-elevated: #f7f8fa;
-    --text: #14151a;
-    --muted: #5b5f6b;
-    --border: #e3e5e9;
-    --accent: #2952e3;
-    --accent-2: #1b3aa8;
+    --bg: #faf8f4;
+    --bg-elevated: #f1ede4;
+    --text: #201d18;
+    --muted: #756e60;
+    --border: #e6e0d3;
+    --accent: #b1502f;
+    --accent-2: #8a3a20;
+    --serif: "Fraunces", Georgia, serif;
     --max-width: 860px;
   }
 
@@ -23,10 +27,10 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -39,7 +43,7 @@
   header.nav {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.92);
+    background: rgba(250,248,244,0.9);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--border);
     z-index: 10;
@@ -48,8 +52,8 @@
   header.nav::after {
     content: "";
     display: block;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    height: 1px;
+    background: var(--border);
   }
 
   .nav .wrap {
@@ -60,12 +64,14 @@
   }
 
   .nav .logo {
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     text-decoration: none;
     color: var(--text);
     white-space: nowrap;
-    font-size: 15px;
+    font-size: 17px;
     flex-shrink: 0;
   }
 
@@ -88,7 +94,8 @@
   .nav a {
     text-decoration: none;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
     white-space: nowrap;
     transition: color .15s ease;
   }
@@ -112,8 +119,8 @@
   }
 
   .cover .photo {
-    width: 132px;
-    height: 132px;
+    width: 136px;
+    height: 136px;
     border-radius: 50%;
     background: var(--bg-elevated);
     border: 1px solid var(--border);
@@ -124,6 +131,7 @@
     color: var(--muted);
     font-size: 13px;
     overflow: hidden;
+    box-shadow: 0 10px 28px rgba(32,29,24,0.08);
   }
 
   .cover .photo img {
@@ -134,18 +142,20 @@
 
   .cover .eyebrow {
     font-size: 12px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 600;
+    margin-bottom: 12px;
   }
 
   .cover h1 {
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 6px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(34px, 6vw, 52px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
   }
 
   .cover .name-en {
@@ -171,17 +181,17 @@
 
   .btn {
     display: inline-block;
-    padding: 9px 18px;
-    border-radius: 6px;
+    padding: 10px 22px;
+    border-radius: 999px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 500;
-    transition: opacity .15s ease;
+    transition: opacity .15s ease, transform .15s ease;
   }
 
   .btn.primary {
     background: var(--accent);
-    color: #ffffff;
+    color: #fff9f3;
     border: 1px solid var(--accent);
   }
 
@@ -191,7 +201,7 @@
     border: 1px solid var(--border);
   }
 
-  .btn:hover { opacity: 0.85; }
+  .btn:hover { opacity: 0.85; transform: translateY(-1px); }
 
   .section-head {
     display: flex;
@@ -202,17 +212,24 @@
   }
 
   h2.section-title {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 700;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-transform: none;
   }
 
   h2.section-title .num {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
     color: var(--accent);
-    font-weight: 800;
-    margin-right: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-right: 8px;
+    vertical-align: middle;
   }
 
   .badge-todo {
@@ -424,6 +441,24 @@
   .cd-embed { margin-top: 14px; }
 
   .cd-embed iframe { border-radius: 8px; max-width: 100%; }
+
+  .playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .playlist-card { display: flex; flex-direction: column; gap: 8px; }
+
+  .playlist-label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .playlist-card iframe { display: block; width: 100%; }
 
   /* ===== แนะนำตัว (About) ===== */
   .about-grid {
@@ -775,42 +810,42 @@
 <!-- ===== แนะนำตัว (About) ===== -->
 <section class="about" id="about">
   <div class="wrap">
-    <h2 class="section-title">แนะนำตัว</h2>
-    <p class="section-desc">สวัสดีครับ นี่คือตัวตนของผม</p>
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">Hi, this is who I am.</p>
 
     <div class="about-grid">
       <div class="about-text">
-        <p>สวัสดีครับ ผมนิธิ ทิพย์ประเสริฐ นักศึกษาคณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี สาขาเทคโนโลยีคอมพิวเตอร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.) เกิดและเติบโตที่อำเภอสมอแข จังหวัดพิษณุโลก</p>
-        <p>ผมสนใจงานด้าน Fullstack Development เป็นพิเศษ ทั้งฝั่ง Frontend และ Backend รวมถึงการเชื่อมต่อ LINE Platform เพื่อสร้างระบบที่ใช้งานได้จริง มีประสบการณ์ตรงจากการฝึกงานเป็น Intern Programmer ที่บริษัท SMMMS ซึ่งได้พัฒนาระบบให้กับ Komatsu และ Daikin Promo นอกจากนี้ผมยังชอบงานออกแบบ (Design) และมักใช้ Figma ในการออกแบบ UI/UX ก่อนลงมือพัฒนาจริงเสมอ</p>
-        <p>นอกเวลาเรียน ผมชอบเล่นเกม ดูหนัง/ซีรีส์ ฟังเพลงแนว Hip-hop/R&amp;B และสนใจเรื่องรถ</p>
+        <p>Hi, I'm Nithi Thipprasoet, a student in the Faculty of Industrial Education and Technology, majoring in Computer Technology at King Mongkut's Institute of Technology Ladkrabang (KMITL). I was born and raised in Somo Khaek, Phitsanulok.</p>
+        <p>I'm especially interested in Fullstack Development — both frontend and backend — including integrating the LINE Platform to build systems that actually work in production. I gained hands-on experience as an Intern Programmer at SMMMS, where I developed systems for Komatsu and Daikin Promo. I also enjoy design work, and I usually sketch out UI/UX in Figma before writing a single line of code.</p>
+        <p>Outside of class, I enjoy gaming, watching movies/series, listening to Hip-hop/R&amp;B, and I'm into cars.</p>
 
         <div class="personal-grid" style="margin-top:20px;">
           <div class="personal-card">
             <div class="personal-icon c1">🎮</div>
             <div class="personal-text">
-              <h4>เล่นเกม</h4>
-              <p>ผ่อนคลายและฝึกแก้ปัญหาเฉพาะหน้า</p>
+              <h4>Gaming</h4>
+              <p>A way to unwind and sharpen quick problem-solving</p>
             </div>
           </div>
           <div class="personal-card">
             <div class="personal-icon c2">🎬</div>
             <div class="personal-text">
-              <h4>ดูหนัง/ซีรีส์</h4>
-              <p>ชอบติดตามเนื้อเรื่องและงานภาพ</p>
+              <h4>Movies &amp; Series</h4>
+              <p>I love following a good story and the cinematography</p>
             </div>
           </div>
           <div class="personal-card">
             <div class="personal-icon c3">🎵</div>
             <div class="personal-text">
-              <h4>ฟังเพลง</h4>
-              <p>สาย Hip-hop / R&amp;B</p>
+              <h4>Music</h4>
+              <p>Mostly Hip-hop / R&amp;B</p>
             </div>
           </div>
           <div class="personal-card">
             <div class="personal-icon c4">🚗</div>
             <div class="personal-text">
-              <h4>รถ</h4>
-              <p>สนใจเรื่องรถและเครื่องยนต์</p>
+              <h4>Cars</h4>
+              <p>Interested in cars and how engines work</p>
             </div>
           </div>
         </div>
@@ -821,9 +856,20 @@
           </div>
           <div class="cd-info">
             <div class="cd-title">Radiohead — Creep</div>
-            <div class="cd-sub">เพลงที่ชอบฟัง กดใส่แผ่นแล้วฟังได้เลย</div>
-            <button class="btn primary" id="cdPlayBtn" type="button">▶ ใส่แผ่น & ฟังเลย</button>
+            <div class="cd-sub">A song I love. Press play to give it a listen.</div>
+            <button class="btn primary" id="cdPlayBtn" type="button">▶ Play Track</button>
             <div class="cd-embed" id="cdEmbed"></div>
+          </div>
+        </div>
+
+        <div class="playlist-grid" style="margin-top:16px;">
+          <div class="playlist-card">
+            <div class="playlist-label">Thai Playlist</div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2wtYAgW2cJ6Zqv3ZlmbTBf?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="playlist-card">
+            <div class="playlist-label">International Playlist</div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7JJKy9BtljN2a3nh6IICCv?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -833,12 +879,12 @@
         </div>
         <div class="about-meta">
           <div class="item">
-            <span class="k">📍 ที่อยู่</span>
-            อ.สมอแข จ.พิษณุโลก
+            <span class="k">📍 Location</span>
+            Phitsanulok, Thailand
           </div>
           <div class="item">
-            <span class="k">🎂 วันเกิด</span>
-            20 ก.ย. 2005
+            <span class="k">🎂 Birthday</span>
+            Sep 20, 2005
           </div>
         </div>
       </div>
@@ -1073,7 +1119,7 @@
       document.getElementById('cdDisc').classList.add('spinning');
       document.getElementById('cdEmbed').innerHTML =
         '<iframe width="280" height="158" src="https://www.youtube.com/embed/XFkzRNyygfk?autoplay=1" title="Radiohead - Creep" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      cdBtn.textContent = '🎵 กำลังเล่น...';
+      cdBtn.textContent = '🎵 Now Playing...';
       cdBtn.disabled = true;
     });
   }
