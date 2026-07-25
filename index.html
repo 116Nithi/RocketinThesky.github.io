@@ -55,26 +55,34 @@
   .nav .wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     height: 60px;
-    overflow-x: auto;
   }
 
   .nav .logo {
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
     text-decoration: none;
     color: var(--text);
     white-space: nowrap;
     font-size: 15px;
+    flex-shrink: 0;
   }
 
   .nav .logo .rocket { display: inline-block; margin-right: 6px; font-size: 14px; }
 
+  .nav .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav .nav-links::-webkit-scrollbar { display: none; }
+
   .nav ul {
     list-style: none;
     display: flex;
-    gap: 22px;
+    gap: 20px;
+    flex-shrink: 0;
   }
 
   .nav a {
@@ -729,18 +737,20 @@
 
 <header class="nav">
   <div class="wrap">
-    <a href="#cover" class="logo"><span class="rocket">🚀</span>นิธิ ทิพย์ประเสริฐ</a>
-    <ul>
-      <li><a href="#cover">หน้าปก</a></li>
-      <li><a href="#about">แนะนำตัว</a></li>
-      <li><a href="#profile">ประวัติส่วนตัว</a></li>
-      <li><a href="#purpose">จุดมุ่งหมาย</a></li>
-      <li><a href="#tech-skills">ทักษะ</a></li>
-      <li><a href="#experience">ประสบการณ์</a></li>
-      <li><a href="#projects">ผลงาน</a></li>
-      <li><a href="#activities">กิจกรรม & รางวัล</a></li>
-      <li><a href="#contact">ติดต่อ</a></li>
-    </ul>
+    <a href="#cover" class="logo"><span class="rocket">🚀</span>Portfolio</a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#cover">หน้าปก</a></li>
+        <li><a href="#about">แนะนำตัว</a></li>
+        <li><a href="#profile">ประวัติส่วนตัว</a></li>
+        <li><a href="#purpose">จุดมุ่งหมาย</a></li>
+        <li><a href="#tech-skills">ทักษะ</a></li>
+        <li><a href="#experience">ประสบการณ์</a></li>
+        <li><a href="#projects">ผลงาน</a></li>
+        <li><a href="#activities">กิจกรรม & รางวัล</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+    </div>
   </div>
 </header>
 
