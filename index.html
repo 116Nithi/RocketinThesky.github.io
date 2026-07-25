@@ -155,33 +155,6 @@
     .cover-keywords { display: none; }
   }
 
-  .marquee {
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg-elevated);
-    padding: 14px 0;
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 36px;
-    white-space: nowrap;
-    width: max-content;
-    animation: marquee 22s linear infinite;
-  }
-
-  .marquee-track span {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 18px;
-    color: var(--muted);
-  }
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
   .cover .photo {
     width: 136px;
     height: 136px;
@@ -1103,12 +1076,6 @@
     </ul>
   </div>
 </section>
-
-<div class="marquee">
-  <div class="marquee-track">
-    <span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span><span>Selected Work —</span>
-  </div>
-</div>
 
 <!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
 <section class="projects" id="projects">
