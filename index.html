@@ -156,6 +156,33 @@
     .cover-keywords { display: none; }
   }
 
+  .marquee {
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+    padding: 14px 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 36px;
+    white-space: nowrap;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-track span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
   .cover .photo {
     width: 136px;
     height: 136px;
@@ -431,73 +458,6 @@
     font-size: 12px;
     color: var(--muted);
   }
-
-  .cd-player {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 24px;
-    padding: 20px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-  }
-
-  .cd-disc {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: conic-gradient(from 90deg, #cfd3da, #ffffff, #b9c6f5, #ffffff, #cfd3da);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .cd-disc.spinning { animation: cdspin 2.4s linear infinite; }
-
-  @keyframes cdspin { to { transform: rotate(360deg); } }
-
-  .cd-disc .cd-hole {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--bg-elevated);
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-  }
-
-  .cd-info { flex: 1; min-width: 160px; }
-
-  .cd-info .cd-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-  .cd-info .cd-sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-
-  .cd-embed { margin-top: 14px; }
-
-  .cd-embed iframe { border-radius: 8px; max-width: 100%; }
-
-  .playlist-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-  }
-
-  .playlist-card { display: flex; flex-direction: column; gap: 8px; }
-
-  .playlist-label {
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-  }
-
-  .playlist-card iframe { display: block; width: 100%; }
 
   /* ===== แนะนำตัว (About) ===== */
   .about-grid {
@@ -831,12 +791,12 @@
     <div class="nav-links">
       <ul>
         <li><a href="#cover">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#profile">Profile</a></li>
         <li><a href="#purpose">Purpose</a></li>
         <li><a href="#tech-skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#activities">Activities</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -858,6 +818,70 @@
       <div class="kw">Backend</div>
       <div class="kw">LINE Platform</div>
       <div class="kw">Figma / UI-UX</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ประสบการณ์ (Experience) ===== -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-desc">ประสบการณ์ทำงานและฝึกงานที่ผ่านมา</p>
+
+    <ul class="exp-list">
+      <li class="exp-item">
+        <div class="exp-year">2025 - Present</div>
+        <div class="exp-body">
+          <h4>SMMMS</h4>
+          <div class="exp-role">Intern Programmer</div>
+          <p class="exp-desc">พัฒนาระบบ LINE OA ให้กับลูกค้า Komatsu (ระบบ Greeting Message และหลังบ้านจัดการแชท) และ Daikin Promo (ระบบ Chat Admin) รวมถึงฟีเจอร์ export ประวัติแชทเป็น Word / Excel / PDF</p>
+          <div class="exp-loc">Thailand</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <h2 class="section-title"><span class="num">04</span>Portfolio / Projects</h2>
+    <p class="section-desc">คัดเฉพาะผลงานชิ้นโบแดง 3-5 ชิ้นที่ตรงกับเป้าหมาย</p>
+
+    <div class="projects-grid">
+
+      <a href="https://github.com/116Nithi/Komatsu-101" target="_blank" class="project-card">
+        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Komatsu_company_logos.svg" alt="Komatsu logo"></div>
+        <div class="body">
+          <div class="tag">Web App / LINE Bot / Admin System</div>
+          <h3>Komatsu Greeting Message System</h3>
+          <p>พัฒนาระบบข้อความต้อนรับอัตโนมัติ (Greeting Message) สำหรับ LINE Official Account ของบริษัท แบบ custom ที่นอกเหนือจากฟีเจอร์มาตรฐานของ LINE พร้อมทั้งระบบหลังบ้านสำหรับจัดการแชท LINE OA, ข้อมูลลูกค้า และ export ประวัติแชทเป็น Word / Excel / PDF</p>
+          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
+          <div class="cta">ดูซอร์สโค้ด →</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/116Nithi/Daikinpromo-101" target="_blank" class="project-card">
+        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/DAIKIN_logo.svg" alt="Daikin logo"></div>
+        <div class="body">
+          <div class="tag">Web App / LINE OA / Admin Dashboard</div>
+          <h3>Daikin Promo — Chat Admin</h3>
+          <p>พัฒนาระบบแชทสำหรับแอดมิน (Chat Admin) บน LINE OA รองรับแคมเปญโปรโมชั่นของ Daikin พร้อม export ประวัติแชทเป็น Word / Excel / PDF</p>
+          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
+          <div class="cta">ดูซอร์สโค้ด →</div>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="thumb">[รูปผลงานที่ 3]</div>
+        <div class="body">
+          <div class="tag">[หมวดหมู่]</div>
+          <h3>[ชื่อผลงานที่ 3]</h3>
+          <p>[บทบาท/หน้าที่ที่รับผิดชอบ]</p>
+          <div class="result">ผลลัพธ์: [ผลลัพธ์ที่ทำได้]</div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1028,70 +1052,6 @@
   </div>
 </section>
 
-<!-- ===== ประสบการณ์ (Experience) ===== -->
-<section class="experience" id="experience">
-  <div class="wrap">
-    <h2 class="section-title">Experience</h2>
-    <p class="section-desc">ประสบการณ์ทำงานและฝึกงานที่ผ่านมา</p>
-
-    <ul class="exp-list">
-      <li class="exp-item">
-        <div class="exp-year">2025 - Present</div>
-        <div class="exp-body">
-          <h4>SMMMS</h4>
-          <div class="exp-role">Intern Programmer</div>
-          <p class="exp-desc">พัฒนาระบบ LINE OA ให้กับลูกค้า Komatsu (ระบบ Greeting Message และหลังบ้านจัดการแชท) และ Daikin Promo (ระบบ Chat Admin) รวมถึงฟีเจอร์ export ประวัติแชทเป็น Word / Excel / PDF</p>
-          <div class="exp-loc">Thailand</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== 4. ผลงาน (Portfolio/Projects) ===== -->
-<section class="projects" id="projects">
-  <div class="wrap">
-    <h2 class="section-title"><span class="num">04</span>Portfolio / Projects</h2>
-    <p class="section-desc">คัดเฉพาะผลงานชิ้นโบแดง 3-5 ชิ้นที่ตรงกับเป้าหมาย</p>
-
-    <div class="projects-grid">
-
-      <a href="https://github.com/116Nithi/Komatsu-101" target="_blank" class="project-card">
-        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Komatsu_company_logos.svg" alt="Komatsu logo"></div>
-        <div class="body">
-          <div class="tag">Web App / LINE Bot / Admin System</div>
-          <h3>Komatsu Greeting Message System</h3>
-          <p>พัฒนาระบบข้อความต้อนรับอัตโนมัติ (Greeting Message) สำหรับ LINE Official Account ของบริษัท แบบ custom ที่นอกเหนือจากฟีเจอร์มาตรฐานของ LINE พร้อมทั้งระบบหลังบ้านสำหรับจัดการแชท LINE OA, ข้อมูลลูกค้า และ export ประวัติแชทเป็น Word / Excel / PDF</p>
-          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
-          <div class="cta">ดูซอร์สโค้ด →</div>
-        </div>
-      </a>
-
-      <a href="https://github.com/116Nithi/Daikinpromo-101" target="_blank" class="project-card">
-        <div class="thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/DAIKIN_logo.svg" alt="Daikin logo"></div>
-        <div class="body">
-          <div class="tag">Web App / LINE OA / Admin Dashboard</div>
-          <h3>Daikin Promo — Chat Admin</h3>
-          <p>พัฒนาระบบแชทสำหรับแอดมิน (Chat Admin) บน LINE OA รองรับแคมเปญโปรโมชั่นของ Daikin พร้อม export ประวัติแชทเป็น Word / Excel / PDF</p>
-          <div class="result">ผลลัพธ์: <span class="stat">100%</span> ส่งมอบระบบสำเร็จ</div>
-          <div class="cta">ดูซอร์สโค้ด →</div>
-        </div>
-      </a>
-
-      <a href="#" class="project-card">
-        <div class="thumb">[รูปผลงานที่ 3]</div>
-        <div class="body">
-          <div class="tag">[หมวดหมู่]</div>
-          <h3>[ชื่อผลงานที่ 3]</h3>
-          <p>[บทบาท/หน้าที่ที่รับผิดชอบ]</p>
-          <div class="result">ผลลัพธ์: [ผลลัพธ์ที่ทำได้]</div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
 <!-- ===== 5. กิจกรรม & รางวัล / ใบประกาศนียบัตร ===== -->
 <section class="activities" id="activities">
   <div class="wrap">
@@ -1145,17 +1105,6 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  var cdBtn = document.getElementById('cdPlayBtn');
-  if (cdBtn) {
-    cdBtn.addEventListener('click', function () {
-      document.getElementById('cdDisc').classList.add('spinning');
-      document.getElementById('cdEmbed').innerHTML =
-        '<iframe width="280" height="158" src="https://www.youtube.com/embed/XFkzRNyygfk?autoplay=1" title="Radiohead - Creep" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      cdBtn.textContent = '🎵 Now Playing...';
-      cdBtn.disabled = true;
-    });
-  }
 </script>
 
 </body>
